@@ -27,7 +27,7 @@ Release date: 01/02/2017
 
 ## Spark Coursework
 
-Release date: ??/02/2017
+Release date: 06/02/2017
 
 [Coursework Specification](spark/spark-coursework-spec.md)
 
