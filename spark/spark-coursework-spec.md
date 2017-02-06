@@ -1,12 +1,12 @@
-#CSC8101 Spark batch coursework
+# CSC8101 Spark batch coursework
 
-##Introduction
+## Introduction
 In 2006 Netflix announced "The Netflix Prize", challenging teams of computer science researchers to produce an algorithm which predicted the movie ratings of netflix users with greater accuracy than Netflix's approach at the time.
 The prize of \$1,000,000 was eventually awarded in 2009 to a team from AT&T Labs.
 In this coursework, you will use the [Resilient Distributed Datastructures](http://spark.apache.org/docs/latest/programming-guide.html#resilient-distributed-datasets-rdds) and [Machine Learning algorithms](http://spark.apache.org/mllib/) provided by [Apache Spark](http://spark.apache.org) to do the same. 
 Unfortunately ... there is no prize.
 
-##The Data
+## The Data
 The data provided to you is, apart from some minor modifications and the addition of a Neo4j database, the same data as used in the netflix prize. It consists of the following files:
 
 * **mv_all_simple.txt**: a text file containing roughly 100 million lines, corresponding to the same number of movie ratings. Each line is of the format `Movie Id, User Id, Rating, Rating Date`. For example: 
@@ -50,7 +50,7 @@ The data provided to you is, apart from some minor modifications and the additio
     The Matrix,1999
     ```
 
-####Obtaining the data 
+#### Obtaining the data 
 
 All the above datasets are stored in an amazon S3 bucket. When you start this coursework you should perform the following steps on your VM: 
 
@@ -80,7 +80,7 @@ All the above datasets are stored in an amazon S3 bucket. When you start this co
 
 **Note**: After Task ??? you will begin writing new nodes and relationships to your Neo4j database. However, you may not get this right first time. If you would like to undo any changes to the database, you may simply stop the database, delete the graph.db folder, repeate step 3 from above and then restart the database.
 
-##Links
+## Links
 
 Throughout this coursework you will need to refer heavily to documentation websites as well as the material (incl. books) mentioned in the lectures.
 Below are some helpful links:
@@ -92,11 +92,11 @@ Below are some helpful links:
 
 **Important**: You may notice that on the left hand side of the MLlib page there are links to two versions of each page, one under the heading "MLlib: Main Guide" and one under the heading "MLlib: RDD-based API Guide". You should **follow the RDD-based guide** as the other guide introduces a new API based upon the `DataSet` and `DataFrame` collection types, which are not covered by this course.
 
-##Tasks
+## Tasks
 
 Below are a list of the individual tasks you will be expected to complete as part of your spark batch coursework. We try to describe each task in detail, however if you are ever in doubt please ask a demonstrator, either in person during a practical or by [creating an issue](https://github.com/tomncooper/CSC8101-Documentation/issues).
 
-####Checkpoints
+#### Checkpoints
 
 A brief aside about checkpoints. As you can see, there are many tasks for you to complete in this coursework. Some of them may prove fairly challenging depending upon your prior level of experience. You may well not complete them all.
 However, we would like to avoid a situation in which students get stuck on task 1 or 2 and then either give up or struggle on for days, never attempting the later tasks. 
@@ -113,7 +113,7 @@ An example of a checkpoint might be a file containing the correct output from a 
 
 Obviously it should go without saying that you will not be awarded marks for tasks you do not attempt. Skipping even an optional task will mean you cannot get 100% for this coursework.
 
-####Task 0
+#### Task 0
 
 The first thing you must do is download one of the spark batch project templates for working with [python](), [java]() or [scala]().
 If you are using python you may also use a python notebook as you have been shown in lectures.
@@ -125,7 +125,7 @@ We also advise setting the parameters _spark.driver.memory_ and _spark.executor.
 **Note**: When using submitting a spark job or starting a pyspark notebook to run spark jobs on your local VM you cannot configure `spark.driver.memory` using `SparkConf`. 
 Instead you must use the `driver-memory` command line parameter for `spark-submit`.
 
-####Task 1 (\*)
+#### Task 1 (\*)
 
 You have been given an canonical list of movies (in `movie_titles_canonical.txt`), along with a list of the movies which appear in the netflix prize dataset.
 You must write a simple algorithm to determine where a movie title from the netflix dataset is an alias of a movie title from the canonical dataset.
@@ -139,7 +139,7 @@ This map should be broadcast to all spark executors.
 
 **Hint**: Don't forget you have dates.
 
-####Task 2 (\*)
+#### Task 2 (\*)
 
 You must now use spark to load all the netflix ratings (in `mv_all_simple.txt`) into an `RDD`.
 This process will involve parsing the string form of each line into a more appropriate tuple or datatype.
@@ -153,7 +153,7 @@ Initially, use the following values for the other parameters to `ALS.train`:
 
 **Hint**: Be careful not to spend a long time replicating (possibly poorly) which already exists in Spark. In particular, make sure you are aware of all the methods available on `RDD`s.
 
-####Task 3 (?)
+#### Task 3 (?)
 
 For this task you will use the previously generated model to recommend 10 movies to a specific user based on their predicted rating of said movies. 
 The user in question has the id _30878_. Once you have used the model to retrieve the 10 recommended movie ids, you should use the alias map created earlier to retrieve their titles and write these recommendations to a file.
@@ -162,7 +162,7 @@ To allow you to informally assess the quality of your predictive model you shoul
 **Hint**: Again, don't reinvent the wheel. Also remember that most operations over an `RDD` are actually evaluated lazily, however there are some operations which will _force_ the datastructure.
 If you are going to _force_ an `RDD` in multiple different places, it is a good idea to `persist` it for performance.
 
-####Task 4 (?)
+#### Task 4 (?)
 
 This next task involves more formal evaluation of the model which you produced in Task 2, rather than just "eyeballing" the output for a single user.
 In spark there exist several evaluation methods for both binary classification and regression models. As we are predicting something which may take any value between 0.0 and 5.0 (i.e. a rating) we producing a regression model.
@@ -182,7 +182,7 @@ Once you have an RMSE score, perhaps try giving your spark `ALS.train` method di
 
 **Hint**: Remember the special operations on `RDD`s of pairs. Also note that `((Int, Int), Double)` is a pair, just a pair of `(Tuple2[Int], Double)`.
 
-####Task 5 (\*)
+#### Task 5 (\*)
 
 This next task should be nice and quick. Using spark, pull in all the `Movie Id, User Id, Date` lines from `qualifying_simple.txt`
 and produce an `RDD` of `(User Id, Movie Id)` (you may ignore the dates). Use the model produced in Task 2 to calculate 
@@ -242,7 +242,7 @@ your spark job to take command line arguments or configuration in order to chang
 passed to the `SparkContext`, so these will need to be easily configurable as well. This is especially important if you
 have chosen to do the coursework in either Java or Scala, which require compilation steps.
 
-##Deliverables
+## Deliverables
 
 At the end of your coursework efforts, you should gather as many of the following as you have managed to produce:
 
@@ -253,7 +253,7 @@ At the end of your coursework efforts, you should gather as many of the followin
 
 The above files should in turn be placed within a file named `submission.zip` and uploaded to Ness.
 
-##Marks
+## Marks
 
 At the moment, we are not disclosing the exact mark allocation for each of the above tasks. Instead we will say that the
 sequence of tasks **0,1,2,5,6,7** represent the core of this coursework and as such are of particularly high importance.
