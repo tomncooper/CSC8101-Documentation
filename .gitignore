@@ -2,3 +2,5 @@
 *.swo
 *.html
 *.pdf
+
+*.DS_Store
