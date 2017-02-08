@@ -73,7 +73,7 @@ All the above datasets are stored in an amazon S3 bucket. When you start this co
 
 4. Unzip the `graph.tgz` file and move it to the location that Neo4j (pre-installed on your VMs) expects using the following command: 
     ```
-    tar -xvf graph.tgz && mv graph.db /var/lib/neo4j/data/databases/
+    tar -xvf graph.tgz && sudo mv graph.db /var/lib/neo4j/data/databases/
     ```
 
 **Note**: Throughout this coursework you should not need to modify any of the provided .txt files. Infact you must not, as one of the tasks towards the end of the coursework is to attempt to run your spark job on a Cluster, rather than a VM. On the cluster the data files will be provided for you, and therefore if your code assumes a modified structure it may not work. 
