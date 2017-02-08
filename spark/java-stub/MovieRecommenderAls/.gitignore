@@ -1,0 +1,6 @@
+MovieRecommender.iml
+.DS_Store
+*.txt
+target/*
+src/main/resources/*
+/target/
