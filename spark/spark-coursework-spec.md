@@ -129,6 +129,10 @@ Once the server is running you can open the notebook in your web browser at:
 
 `<VM IP ADDRESS>:8888`
 
+Once on the Jupyter home page you can start a new notebook by going to the "New" menu in the top right and selecting "Python 3" under the notebook section. The code for your solution to the tasks below can be saved in this new notebook and started up again from the Jupyter homepage.
+
+Please note that in order for notebook to function properly with Spark, only one kernel (notebook) can be running at any one time. Use the "Running" tab on the Jupyter home page to check how many kernels are running. You may need to shut all kernels down and restart the notebook you are interested in, in order to get a functioning connection to Spark.
+
 ##### Java or Scala
 
 If you are planning to use Java or Scala then download one of the spark batch project templates ([java](https://github.com/tomncooper/CSC8101-Documentation/tree/master/spark/java-stub/MovieRecommenderAls), [scala]()). 
