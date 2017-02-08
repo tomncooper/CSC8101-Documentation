@@ -78,7 +78,7 @@ All the above datasets are stored in an amazon S3 bucket. When you start this co
 
 **Note**: Throughout this coursework you should not need to modify any of the provided .txt files. Infact you must not, as one of the tasks towards the end of the coursework is to attempt to run your spark job on a Cluster, rather than a VM. On the cluster the data files will be provided for you, and therefore if your code assumes a modified structure it may not work. 
 
-**Note**: After Task ??? you will begin writing new nodes and relationships to your Neo4j database. However, you may not get this right first time. If you would like to undo any changes to the database, you may simply stop the database, delete the graph.db folder, repeate step 3 from above and then restart the database.
+**Note**: After Task 7 you will begin writing new nodes and relationships to your Neo4j database. However, you may not get this right first time. If you would like to undo any changes to the database, you may simply stop the database, delete the graph.db folder, repeate step 3 from above and then restart the database.
 
 ## Links
 
