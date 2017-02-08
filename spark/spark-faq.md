@@ -19,12 +19,12 @@ No you don't!
 If you would prefer to enter commands directly into a command line interpreter
 (REPL) then run the following command on your VM:
 
-`$ ipyspark` 
+`$ ~/scripts/ipyspark.sh` 
 
 This will change the config setting of pyspark and launch it in a command line
 interpreter. After running this command calling the `pyspark` command will 
 always launch a command line interpreter. After a reboot the default notbook 
-config will be reinstated so you will have to run `ipyspark` again.
+config will be reinstated so you will have to run the ipyspark script again.
 
 Be aware that commands entered into the command line interpreter are not saved
 and will be lost when you close the interpreter (Ctrl+D). The command line 
@@ -38,7 +38,7 @@ your VM:
 If you have called `ipyspark` but wish to go back to the notebook version 
 without rebooting use the command below:
 
-`$ pyspark-notebook`
+`$ ~/scripts/pyspark-notebook`
 
 This will change the configs back to their defaults and launch the notebook 
 server.
