@@ -115,14 +115,25 @@ Obviously it should go without saying that you will not be awarded marks for tas
 
 #### Task 0
 
-**Note** If you develop using **Python**, please start a notebook on your VM. This is just command:
+Depending on the language you intend to use to develop your solution there are different setup instructions.
 
-`pyspark`
+##### Python
 
-then open the notebook on your web browser at URL \<VM IP address\>:8888
+If you are planning to develop using Python, you can use A Jupyter notebook which is hosted on your VM. To start the notebook server log into your VM and run the following command:
 
-The first thing you must do is download one of the spark batch project templates for working with [java]() or [scala]().
-If you are using python you may also use a python notebook as you have been shown in lectures.
+`$ pyspark`
+
+You will not be able to enter any other commands in this console while the server is running. If you want to run commands on the VM while the notebook is running then login to your VM in a separate ssh session (on Windows you will need to start another putty session).
+
+Once the server is running you can open the notebook in your web browser at \<VM IP ADDRESS\>:8888
+
+##### Java or Scala
+
+If you are planning to use Java or Scala then download one of the spark batch project templates ([java](https://github.com/tomncooper/CSC8101-Documentation/tree/master/spark/java-stub/MovieRecommenderAls), [scala]()). 
+
+You can then use maven or sbt to compile your project and submit it by using teh spark-submit program.
+
+##### Further setup
 
 Once you have a project, create a spark context for use in all later operations. 
 To start with you should specify `local[2]` as the _master_ parameter, which indicates that spark will run on your VM rather than a cluster, and use two threads.
