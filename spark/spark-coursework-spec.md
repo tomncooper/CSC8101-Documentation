@@ -119,7 +119,7 @@ Obviously it should go without saying that you will not be awarded marks for tas
 
 `pyspark`
 
-then open the notebook on your web browser at URL <VM IP address>:8888
+then open the notebook on your web browser at URL \<VM IP address\>:8888
 
 The first thing you must do is download one of the spark batch project templates for working with [java]() or [scala]().
 If you are using python you may also use a python notebook as you have been shown in lectures.
