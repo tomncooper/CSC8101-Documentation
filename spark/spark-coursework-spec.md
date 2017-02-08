@@ -145,8 +145,14 @@ Once you have a project, create a spark context for use in all later operations.
 To start with you should specify `local[2]` as the _master_ parameter, which indicates that spark will run on your VM rather than a cluster, and use two threads.
 We also advise setting the parameters _spark.driver.memory_ and _spark.executor.memory_ to `4g` and `2g` respectively.
 
+A [python sample program](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/python-stub/SparkNeo4jSample.py) has been created for you as a starting point with [steps for local and cluster deployment](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/python-stub/README.md).
+
 **Note**: When using submitting a spark job or starting a pyspark notebook to run spark jobs on your local VM you cannot configure `spark.driver.memory` using `SparkConf`. 
-Instead you must use the `driver-memory` command line parameter for `spark-submit`.
+Instead you must use the `driver-memory` command line parameter for `spark-submit` such as:
+
+    ```
+    $ pyspark --num-executors 5 --driver-memory 2g --executor-memory 2g
+    ```
 
 #### Task 1 (\*)
 
