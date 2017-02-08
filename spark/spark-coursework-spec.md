@@ -115,7 +115,11 @@ Obviously it should go without saying that you will not be awarded marks for tas
 
 #### Task 0
 
-The first thing you must do is download one of the spark batch project templates for working with [python](), [java]() or [scala]().
+**Note** If you develop using **Python**, please start a notebook on your VM. This is just command:
+`pyspark`
+then open the notebook on your web browser at URL <VM IP address>:8888
+
+The first thing you must do is download one of the spark batch project templates for working with [java]() or [scala]().
 If you are using python you may also use a python notebook as you have been shown in lectures.
 
 Once you have a project, create a spark context for use in all later operations. 
