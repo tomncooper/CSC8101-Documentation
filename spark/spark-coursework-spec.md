@@ -125,13 +125,15 @@ If you are planning to develop using Python, you can use A Jupyter notebook whic
 
 You will not be able to enter any other commands in this console while the server is running. If you want to run commands on the VM while the notebook is running then login to your VM in a separate ssh session (on Windows you will need to start another putty session).
 
-Once the server is running you can open the notebook in your web browser at \<VM IP ADDRESS\>:8888
+Once the server is running you can open the notebook in your web browser at: 
+
+`<VM IP ADDRESS>:8888`
 
 ##### Java or Scala
 
 If you are planning to use Java or Scala then download one of the spark batch project templates ([java](https://github.com/tomncooper/CSC8101-Documentation/tree/master/spark/java-stub/MovieRecommenderAls), [scala]()). 
 
-You can then use maven or sbt to compile your project and submit it by using teh spark-submit program.
+You can then use maven or sbt to compile your project and submit it by using the spark-submit program.
 
 ##### Further setup
 
