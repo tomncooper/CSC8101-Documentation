@@ -116,7 +116,9 @@ Obviously it should go without saying that you will not be awarded marks for tas
 #### Task 0
 
 **Note** If you develop using **Python**, please start a notebook on your VM. This is just command:
+
 `pyspark`
+
 then open the notebook on your web browser at URL <VM IP address>:8888
 
 The first thing you must do is download one of the spark batch project templates for working with [java]() or [scala]().
