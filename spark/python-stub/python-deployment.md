@@ -8,7 +8,7 @@ iPython notebook is an excellent place for data exploration or testing algorithm
 
 ### Local Deployment
 
-A [sample program](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/python-stub/SparkNeo4jSample.py) was prepared for you to get you started.
+A [sample program](https://raw.githubusercontent.com/tomncooper/CSC8101-Documentation/master/spark/python-stub/SparkNeo4jSample.py) has been prepared for you to get you started.
 
 This program does two things. First, it reads file 'movie_titles_canonical.txt' into a RDD and counts the number of lines; second, it connects to your neo4j database and creates a new node via bolt interface.
 
@@ -25,7 +25,7 @@ Let's make sure that you can run this program from your student VM.
     ```   
 5. Submit the Spark job for local processing:
     ```shell
-    $ ./spark/spark-2.1.0-bin-hadoop2.7/bin/spark-submit workspace/SparkNeo4jSample.py
+    $ spark-submit workspace/SparkNeo4jSample.py
     ```
 #### Verify
 
@@ -69,7 +69,7 @@ Ok so now you're ready!
 2. Run:
 
    ```shell
-   $ ./spark/spark-2.1.0-bin-hadoop2.7/bin/spark-submit --master spark://ip-172-31-25-107.eu-west-1.compute.internal:7077 workspace/SparkNeo4jSample.py
+   $ spark-submit --master spark://ip-172-31-25-107.eu-west-1.compute.internal:7077 workspace/SparkNeo4jSample.py
    ```
    
 #### Verify
