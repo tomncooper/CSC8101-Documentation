@@ -38,7 +38,7 @@ your VM:
 If you have called `ipyspark` but wish to go back to the notebook version 
 without rebooting use the command below:
 
-`$ ~/scripts/pyspark-notebook`
+`$ ~/scripts/pyspark-notebook.sh`
 
 This will change the configs back to their defaults and launch the notebook 
 server.
