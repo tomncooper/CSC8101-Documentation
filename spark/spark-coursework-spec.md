@@ -115,11 +115,11 @@ Obviously it should go without saying that you will not be awarded marks for tas
 
 #### Task 0
 
-Depending on the language you intend to use to develop your solution there are different setup instructions.
+The setup instructions differ depending on the language you intend to use to develop your solution.
 
 ##### Python
 
-If you are planning to develop using Python, you can use A Jupyter notebook which is hosted on your VM. To start the notebook server log into your VM and run the following command:
+If you are planning to develop using Python, you can use a Jupyter notebook (like those used in the lectures) which is hosted on your VM. To start the notebook server log into your VM and run the following command:
 
 `$ pyspark`
 
@@ -132,6 +132,8 @@ Once the server is running you can open the notebook in your web browser at:
 Once on the Jupyter home page you can start a new notebook by going to the "New" menu in the top right and selecting "Python 3" under the notebook section. The code for your solution to the tasks below can be saved in this new notebook and started up again from the Jupyter homepage.
 
 Please note that in order for notebook to function properly with Spark, only one kernel (notebook) can be running at any one time. Use the "Running" tab on the Jupyter home page to check how many kernels are running. You may need to shut all kernels down and restart the notebook you are interested in, in order to get a functioning connection to Spark.
+
+You can also develop you Python solution without using Jupyter notebooks, please refer to the [FAQ](spark-faq.md) for more details.
 
 ##### Java or Scala
 
