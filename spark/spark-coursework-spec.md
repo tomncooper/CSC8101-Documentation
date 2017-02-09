@@ -136,9 +136,7 @@ Please note that in order for notebook to function properly with Spark, only one
 When using submitting a spark job or starting a pyspark notebook to run spark jobs on your local VM you cannot configure `spark.driver.memory` using `SparkConf`. 
 Instead you must use the `driver-memory` command line parameter for `spark-submit` such as:
 
-    ```
-    $ pyspark --num-executors 5 --driver-memory 2g --executor-memory 2g
-    ```
+`$ pyspark --num-executors 5 --driver-memory 2g --executor-memory 2g`
     
 You can also develop you Python solution without using Jupyter notebooks, please refer to the [FAQ](spark-faq.md) for more details.
 
