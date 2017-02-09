@@ -19,10 +19,7 @@ Let's make sure that you can run this program from your student VM.
 1. Copy the program to your working directory (e.g. /home/ubuntu/workspace/SparkNeo4jSample.py).
 2. Modify the initial variables in your favourite editor to match your environment (especially pay attention to NEO4J_PASS and PATH_TO_FILE entries).
 3. Save the file.
-4. Go to your home directory:
-    ```shell
-    $ cd
-    ```   
+4. Go to your home directory: `$ cd`
 5. Submit the Spark job for local processing:
     ```shell
     $ spark-submit workspace/SparkNeo4jSample.py
