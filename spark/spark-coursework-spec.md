@@ -140,7 +140,7 @@ Instead you must use the `driver-memory` command line parameter for `spark-submi
     
 You can also develop you Python solution without using Jupyter notebooks, please refer to the [FAQ](spark-faq.md) for more details.
 
-A [python sample program](https://raw.githubusercontent.com/tomncooper/CSC8101-Documentation/master/spark/python-stub/SparkNeo4jSample.py) has been created for you as a starting point with [steps for local and cluster deployment](python-stub/README.md). This can be used a base for a Jupyter notebook or standard Python script.
+A [python sample program](https://raw.githubusercontent.com/tomncooper/CSC8101-Documentation/master/spark/python-stub/SparkNeo4jSample.py) has been created for you as a starting point with [steps for local and cluster deployment](python-stub/python-deployment.md). This can be used a base for a Jupyter notebook or standard Python script.
 
 ##### Java or Scala
 
@@ -150,8 +150,6 @@ You can then use maven or sbt to compile your project and submit it by using the
 
 Once you have a project, create a spark context for use in all later operations. To start with you should specify `local[2]` as the _master_ parameter, which indicates that spark will run on your VM rather than a cluster, and use two threads.
 We also advise setting the parameters _spark.driver.memory_ and _spark.executor.memory_ to `4g` and `2g` respectively.
-
-
 
 #### Task 1 (\*)
 
