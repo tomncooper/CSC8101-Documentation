@@ -16,6 +16,6 @@ Also make sure you have read the instructions in the
 In order for your Python notebook to talk to Cassandra you need install the 
 Python 3 version of the driver. On your vm run the following command:
 
-`$ pip install cassandra-driver`
+`$ sudo pip install cassandra-driver`
 
 The install process may take some time, so be patient.
