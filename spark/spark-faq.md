@@ -20,6 +20,14 @@ You may need to run the following command on your VM:
 
 This should insure that the Python 3 neo4j driver is properly installed.
 
+### I cannot access neo4j web interface on port 7474 (404 Error).
+
+Your neo4j database is most likely down. Login to your VM and run:
+
+`$ sudo neo4j start`
+
+Try to load the webpage again.
+
 ### Do I have to use Jupyter Notebooks to write my python code?
 
 No you don't!
