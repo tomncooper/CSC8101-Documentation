@@ -10,3 +10,12 @@ documentation for your chosen language:
 
 Also make sure you have read the instructions in the 
 [coursework specification](cassandra-coursework-spec.md).
+
+## How do I access cassandra from my Jupyter notebook?
+
+In order for your Python notebook to talk to Cassandra you need install the 
+Python 3 version of the driver. On your vm run the following command:
+
+`$ pip install cassandra-driver`
+
+The install process may take some time, so be patient.
