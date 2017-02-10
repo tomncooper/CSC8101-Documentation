@@ -12,6 +12,14 @@ and the API documentation for your chosen language:
 Also make sure you have read the instructions in the 
 [coursework specification](spark-coursework-spec.md).
 
+### I cannot access neo4J from my Jupyter Notebook!
+
+You may need to run the following command on your VM:
+
+`$ sudo pip3 install neo4j-driver`
+
+This should insure that the Python 3 neo4j driver is properly installed.
+
 ### Do I have to use Jupyter Notebooks to write my python code?
 
 No you don't!
