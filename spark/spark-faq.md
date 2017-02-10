@@ -12,6 +12,8 @@ and the API documentation for your chosen language:
 Also make sure you have read the instructions in the 
 [coursework specification](spark-coursework-spec.md).
 
+## Neo4j
+
 ### I cannot access neo4J from my Jupyter Notebook!
 
 You may need to run the following command on your VM:
@@ -28,13 +30,25 @@ Your neo4j database is most likely down. Login to your VM and run:
 
 Try to load the webpage again.
 
+## Spark in iPython notebooks
+
 ### How many Spark worker threads are running on my iPython notebook?
 
 You can check the number of threads by running following command directly in your iPython notebook:
 
 `print("Number of worker threads:", sc.getConf().get("spark.master"))`
     
-Check the result against the table in the [documentation](http://spark.apache.org/docs/latest/submitting-applications.html#master-urls).   
+Check the result against the table in the [documentation](http://spark.apache.org/docs/latest/submitting-applications.html#master-urls).  
+
+By default SparkContext will run with as many worker threads as logical cores on your machine.
+
+### How can I modify Spark resources available to my iPython notebook?
+
+When starting your iPython notebook from the shell command line on your student VM, you can specify specific resource allocation (e.g. number of executors, driver RAM memory, executor RAM memory, etc):
+
+`$ pyspark --num-executors 5 --driver-memory 2g --executor-memory 2g`
+
+## Spark in command line
 
 ### Do I have to use Jupyter Notebooks to write my python code?
 
@@ -66,6 +80,8 @@ without rebooting use the command below:
 
 This will change the configs back to their defaults and launch the notebook 
 server.
+
+## Others
 
 ### How do I reduce spark console output?
 
