@@ -28,6 +28,14 @@ Your neo4j database is most likely down. Login to your VM and run:
 
 Try to load the webpage again.
 
+### How many Spark worker threads are running on my iPython notebook?
+
+You can check the number of threads by running following command directly in your iPython notebook:
+
+`print("Number of worker threads:", sc.getConf().get("spark.master"))`
+    
+Check the result against the table in the [documentation](http://spark.apache.org/docs/latest/submitting-applications.html#master-urls).   
+
 ### Do I have to use Jupyter Notebooks to write my python code?
 
 No you don't!
