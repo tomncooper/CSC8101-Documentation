@@ -16,7 +16,7 @@ Also make sure you have read the instructions in the
 
 * [Neo4j](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#neo4j)
 * [Spark in iPython notebooks](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#spark-in-ipython-notebooks)
-* [Spark in a command line](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#spark-in-command-line)
+* [Spark in a command line](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#spark-in-a-command-line)
 * [Others](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#others)
 
 ## Neo4j
