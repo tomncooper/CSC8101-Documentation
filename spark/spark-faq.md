@@ -12,6 +12,13 @@ and the API documentation for your chosen language:
 Also make sure you have read the instructions in the 
 [coursework specification](spark-coursework-spec.md).
 
+# FAQ content
+
+* [Neo4j](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#neo4j)
+* [Spark in iPython notebooks](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#spark-in-ipython-notebooks)
+* [Spark in a command line](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#spark-in-command-line)
+* [Others](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#others)
+
 ## Neo4j
 
 ### I cannot access neo4J from my Jupyter Notebook!
@@ -48,7 +55,7 @@ When starting your iPython notebook from the shell command line on your student 
 
 `$ pyspark --num-executors 5 --driver-memory 2g --executor-memory 2g`
 
-## Spark in command line
+## Spark in a command line
 
 ### Do I have to use Jupyter Notebooks to write my python code?
 
