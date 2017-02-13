@@ -105,8 +105,12 @@ stop you program is to kill it manually. This can lead to issues with notebook
 kernels crashing and you may find you have to restart often.
 
 Therefore it recommended that for this coursework you write standard `.py` files
-and use the `spark-submit` program to run them locally on your VM. A stub python
-file has been [provided](https://raw.githubusercontent.com/tomncooper/CSC8101-Documentation/master/spark-streaming/stub.py), this defines the spark context and streaming context
+and use the `spark-submit` program to run them locally on your VM. 
+
+### Example streaming code
+
+A stub python file has been 
+[provided](https://raw.githubusercontent.com/tomncooper/CSC8101-Documentation/master/spark-streaming/stub.py), this defines the spark context and streaming context
 objects and has additional helper methods for some of the database connection 
 tasks. You should use this file as a base, make a copy of it for your project 
 and add your code to complete the tasks below. 
@@ -172,7 +176,7 @@ broker, receives the raw event messages and performs the following tasks:
 
 ### Task 1: Connect to the Kafka Broker
 
-You have been provided with a [stub](developingsparkstreamingprograms) python 
+You have been provided with a [stub](#examplestreamingcode) python 
 project which contains the connection code and creates a DStream of raw JSON 
 string RDDs, one for every batch interval. You will need to provide the broker 
 connection address for the broker you which to pull messages from and the topic
