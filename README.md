@@ -75,4 +75,4 @@ Release date: 13/02/2017
 
 [Coursework Specification](spark-streaming/spark-streaming-coursework-spec.md)
 
-[Coursework FAQ](spark/spark-streaming-faq.md)
+[Coursework FAQ](spark-streaming/spark-streaming-faq.md)
