@@ -78,10 +78,6 @@ SSC = StreamingContext(SC, BATCH_INTERVAL)
 
 ########## Kafka Setup ##########
 
-# Create a direct connection object to the kafka broker
-#KS = KafkaUtils.createDirectStream(
-	   #SSC, ["test"], {"bootstrap.servers": "138.68.140.39:9021"})
-
 # Create receiver based stream
 # NOTE: Please edit the Broker IP to match your designated broker address.
 # Also edit the client_id_for_broker to be something personal to you such as
