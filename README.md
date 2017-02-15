@@ -73,6 +73,8 @@ Release date: 06/02/2017
 
 Release date: 13/02/2017
 
+[Introduction Lecture Slides](https://docs.google.com/presentation/d/18EnEjy6Uo5fnRKv9nIgUA9VspgcWA-tog6s7bjaIkNE/edit?usp=sharing)
+
 [Coursework Specification](spark-streaming/spark-streaming-coursework-spec.md)
 
 [Coursework FAQ](spark-streaming/spark-streaming-faq.md)
