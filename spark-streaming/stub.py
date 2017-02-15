@@ -78,19 +78,17 @@ SSC = StreamingContext(SC, BATCH_INTERVAL)
 
 ########## Kafka Setup ##########
 
-# Create a direct connection object to the kafka broker
-#KS = KafkaUtils.createDirectStream(
-	   #SSC, ["test"], {"bootstrap.servers": "138.68.140.39:9021"})
-
 # Create receiver based stream
 # NOTE: Please edit the Broker IP to match your designated broker address.
 # Also edit the client_id_for_broker to be something personal to you such as
 # your student number. This is used for the broker to identify your client.
-# Also edit the topic_name you would like to pull messages from.
+# Also edit the topic_name you would like to pull messages from and the number
+# of partitions to consume on that topic. For development 1 is fine, for 
+# consuming from the production stream a higher number is recommended.
 RAW_MESSAGES = KafkaUtils.createStream(SSC,
                                        "BrokerIP:2181",
                                        client_id_for_broker,
-                                       {topic_name:1})
+                                       {topic_name: num_of_partitions_to_consume_from})
 
 ########## Window the incoming batches ##########
 
