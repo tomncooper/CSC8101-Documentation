@@ -138,7 +138,7 @@ the effect of changing them. Be aware that reducing the rank of latent factor
 matrices and the number of iterations performed will reduce the predictive
 accuracy of your model. 3 would be an absolute minimum for both.
 
-4. Use a subset of the ratings file found [here](). This is hitting your performance
+4. Use a subset of the ratings file found [here](https://s3-eu-west-1.amazonaws.com/csc8101-spark-assignment-data/mv_all_1000_simple.txt). This is hitting your performance
 problems with a metaphorical hammer, but it will likely work as the file above only
 contains 1/20th the number of ratings. Be aware that the model produced will not
 predict sensible ratings, but will allow you to progress with the coursework (after
