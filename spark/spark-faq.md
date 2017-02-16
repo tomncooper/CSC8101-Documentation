@@ -95,13 +95,13 @@ can change the logging level by using the process below:
 
 From your home directory run the following command: 
 
-`$ cp spark/conf/log4j.properties.template spark/conf/log4j.properties`
+`$ cp spark/spark-2.1.0-bin-hadoop2.7/conf/log4j.properties.template spark/spark-2.1.0-bin-hadoop2.7/conf/log4j.properties`
 
 This will create a new logging config file. You then need to edit this file
 using whatever console based text editor you are happy with, `nano` or `vim` are
 pre-installed on your VMs. 
 
-`$ nano spark/conf/log4j.properties` 
+`$ nano spark/spark-2.1.0-bin-hadoop2.7/conf/log4j.properties` 
 
 You the need to change the following line from this:
 
