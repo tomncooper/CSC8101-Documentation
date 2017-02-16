@@ -88,6 +88,89 @@ without rebooting use the command below:
 This will change the configs back to their defaults and launch the notebook 
 server.
 
+## Spark in general
+
+### My program is taking a long time to execute
+
+Within reason, this is to be expected. If you remember the lecture on the subject,
+you will remember that the [ALS](http://spark.apache.org/docs/latest/mllib-collaborative-filtering.html)
+algorithm is iteratively trying to adjust all the values of two latent factor matrices
+(containing roughly 2.5M elements) so that specific values in their dot product
+closely match all of the 95M known ratings. Even just considering the integer
+operations, your VMs **cannot do this in 2 minutes of running time**, as you may
+be used to from previous assignments. This is _Big_ Data after all.
+
+Exactly how long your program runs depends on many factors. Most importantly how
+you have written it, but also other less important things such as the programming
+language you have chosen to use (Ahem ... see **Sidenote on Python**).
+
+Depending on the particulars of your solution, you can expect running times anywhere
+from around **10 minutes** up to around **40 minutes**. Any longer than this and
+there is probably something wrong. That may seem like a wide range, but think of
+it in terms of a program which will run for 5 seconds or 20 seconds.
+
+If your program is running slowly, or failing after a long time and making debugging
+tedious then there are things you can do:
+
+--------------------------
+
+1. Try calling `.persist()` (and perhaps `.unpersist()`) on your `RDD`s. `RDD`s are lazily
+evaluated which means that when you chain several operations (`map`, `filter` and
+friends) on one, nothing happens right away. However if you then do something which
+forces an `RDD` to be materialised (e.g. pass it to `ALS.train`, or call `collect`,
+`join` etc...) then all those chained operations are evaluated for each `RDD`
+element. For reasons of saving memory, the results of these operations are not
+kept around by default. This means that if you materialise an `RDD` multiple times
+all those earlier operations are repeated. The solution to this problem is the
+`persist` operation, which is explained [here](http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence).
+
+2. Make sure you are using the right methods on `ALS`. The training is likely to
+be the most expensive part of your program. You need to make sure you are using
+the **RDD-based API** (as instructed in the docs). The model training part of
+your program should look similar to the code sampes on [this](http://spark.apache.org/docs/latest/mllib-collaborative-filtering.html)
+page. Specifically, make sure you are calling the `ALS.train` method. If you
+are calling `ALS.fit` **you are using the wrong API**.
+
+3. Try different tuning parameters. During the lecture on the workings of the
+ALS algorithm (delivered by Hugo Firth) you were told what the parameters
+(_rank_, _iterations_ etc...) meant. From this you should be able to extrapolate
+the effect of changing them. Be aware that reducing the rank of latent factor
+matrices and the number of iterations performed will reduce the predictive
+accuracy of your model. 3 would be an absolute minimum for both.
+
+4. Use a subset of the ratings file found [here](). This is hitting your performance
+problems with a metaphorical hammer, but it will likely work as the file above only
+contains 1/20th the number of ratings. Be aware that the model produced will not
+predict sensible ratings, but will allow you to progress with the coursework (after
+all, none of the steps after model training _technically_ require that the model be
+accurate), which is more important.
+
+--------------------------
+
+If you are suffering performance issues you should attempt the first two steps above.
+Failing this, you should seek the advice of a demonstrator, either in session or via a [github issue](https://github.com/tomncooper/CSC8101-Documentation/issues).
+
+However if you continue to be stuck, then please try one or both of the last steps.
+You will lose some marks for having a less accurate model, but far fewer than if you
+do not attempt any of the subsequent tasks in the coursework.
+
+### Sidenote on Python
+
+I like to think of the way Python sends instructions to your CPU as not disimilar
+to the way the fellowship took the one ring to mount Doom. [Slowly](http://benchmarksgame.alioth.debian.org/u64q/python.html).
+
+Just occasionally the fellowship (Python) will do what you expect and get on the
+back of an eagle (execute some C) to speed things up. Unfortunately they rarely
+do this **when** you expect (on the way back?!) and eagles (C programs) have problems
+of their own, namely: they have big beaks and claws and if they drop you
+you might just fall into an active volcano.
+
+Fortunately, like destroying the ring, spark batch jobs usually only need running
+once; you can go ahead and entrust the "fate of the world" to digital hobbits
+if you like... :)
+
+**Disclaimer**: relax, the creators of pyspark are pretty smart. Its actually C or Java a lot of the time under the hood and the overhead is [likely very small](http://stackoverflow.com/questions/30477982/python-vs-scala-for-spark-jobs). [Here](https://cwiki.apache.org/confluence/display/SPARK/PySpark+Internals) is a link for the curious on how Pyspark works.
+
 ## Others
 
 ### How do I reduce spark console output?
