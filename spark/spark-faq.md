@@ -131,19 +131,20 @@ your program should look similar to the code sampes on [this](http://spark.apach
 page. Specifically, make sure you are calling the `ALS.train` method. If you
 are calling `ALS.fit` **you are using the wrong API**.
 
-3. Try different tuning parameters. During the lecture on the workings of the
+3. Use a subset of the ratings file found [here](https://s3-eu-west-1.amazonaws.com/csc8101-spark-assignment-data/mv_all_1000_simple.txt). This is hitting your performance
+problems with a metaphorical hammer :) , but it will likely work as the file above only
+contains 1/20th the number of ratings. Be aware that the model produced will not
+predict sensible ratings, but will allow you to progress with the coursework (after
+all, none of the steps after model training _technically_ require that the model be
+accurate), which is more important.
+
+4. Try different tuning parameters. During the lecture on the workings of the
 ALS algorithm (delivered by Hugo Firth) you were told what the parameters
 (_rank_, _iterations_ etc...) meant. From this you should be able to extrapolate
 the effect of changing them. Be aware that reducing the rank of latent factor
 matrices and the number of iterations performed will reduce the predictive
 accuracy of your model. 3 would be an absolute minimum for both.
 
-4. Use a subset of the ratings file found [here](https://s3-eu-west-1.amazonaws.com/csc8101-spark-assignment-data/mv_all_1000_simple.txt). This is hitting your performance
-problems with a metaphorical hammer, but it will likely work as the file above only
-contains 1/20th the number of ratings. Be aware that the model produced will not
-predict sensible ratings, but will allow you to progress with the coursework (after
-all, none of the steps after model training _technically_ require that the model be
-accurate), which is more important.
 
 --------------------------
 
