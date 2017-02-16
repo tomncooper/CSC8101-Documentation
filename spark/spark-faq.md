@@ -14,9 +14,9 @@ Also make sure you have read the instructions in the
 
 # FAQ content
 
-* [Neo4j](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#neo4j)
-* [Running Spark](#runningspark)
-* [Spark in general](#sparkingeneral)
+* [Neo4j](#neo4j)
+* [Running Spark](#running-spark)
+* [Spark in general](#spark-in-general)
 
 ## Neo4j
 
