@@ -68,7 +68,7 @@ sp_conf.set("spark.cassandra.connection.host", "localhost")
 # Create the spark context object.
 # For local development it is very important to use "local[2]" as Spark
 # Streaming needs 2 cores minimum to function properly
-SC = SparkContext(master="local[2]", appName="Event Processing" conf=sp_conf)
+SC = SparkContext(master="local[2]", appName="Event Processing", conf=sp_conf)
 
 #Set the batch interval in seconds
 BATCH_INTERVAL = 10
