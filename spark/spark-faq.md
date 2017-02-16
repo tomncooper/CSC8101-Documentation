@@ -15,9 +15,8 @@ Also make sure you have read the instructions in the
 # FAQ content
 
 * [Neo4j](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#neo4j)
-* [Spark in iPython notebooks](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#spark-in-ipython-notebooks)
-* [Spark in a command line](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#spark-in-a-command-line)
-* [Others](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#others)
+* [Running Spark](#runningspark)
+* [Spark in general](#sparkingeneral)
 
 ## Neo4j
 
@@ -37,7 +36,7 @@ Your neo4j database is most likely down. Login to your VM and run:
 
 Try to load the webpage again.
 
-## Spark in iPython notebooks
+## Running Spark
 
 ### How many Spark worker threads are running on my iPython notebook?
 
@@ -54,8 +53,6 @@ By default SparkContext will run with as many worker threads as logical cores on
 When starting your iPython notebook from the shell command line on your student VM, you can specify specific resource allocation (e.g. number of executors, driver RAM memory, executor RAM memory, etc):
 
 `$ pyspark --num-executors 5 --driver-memory 2g --executor-memory 2g`
-
-## Spark in a command line
 
 ### Do I have to use Jupyter Notebooks to write my python code?
 
@@ -87,6 +84,35 @@ without rebooting use the command below:
 
 This will change the configs back to their defaults and launch the notebook 
 server.
+
+### How do I reduce spark console output?
+
+By default Spark will output a lot of information about its internal working
+when you run a local job.
+
+If you don't want to see this during development on your local machine you 
+can change the logging level by using the process below:
+
+From your home directory run the following command: 
+
+`$ cp spark/conf/log4j.properties.template spark/conf/log4j.properties`
+
+This will create a new logging config file. You then need to edit this file
+using whatever console based text editor you are happy with, `nano` or `vim` are
+pre-installed on your VMs. 
+
+`$ nano spark/conf/log4j.properties` 
+
+You the need to change the following line from this:
+
+`log4j.rootCategory=INFO, console`
+
+To this:
+
+`log4j.rootCategory=ERROR, console`
+
+Once you save this file, the next time you run spark you will only see errors
+and any print or rdd.pprint command outputs.
 
 ## Spark in general
 
@@ -145,7 +171,6 @@ the effect of changing them. Be aware that reducing the rank of latent factor
 matrices and the number of iterations performed will reduce the predictive
 accuracy of your model. 3 would be an absolute minimum for both.
 
-
 --------------------------
 
 If you are suffering performance issues you should attempt the first two steps above.
@@ -171,34 +196,3 @@ once; you can go ahead and entrust the "fate of the world" to digital hobbits
 if you like... :)
 
 **Disclaimer**: relax, the creators of pyspark are pretty smart. Its actually C or Java a lot of the time under the hood and the overhead is [likely very small](http://stackoverflow.com/questions/30477982/python-vs-scala-for-spark-jobs). [Here](https://cwiki.apache.org/confluence/display/SPARK/PySpark+Internals) is a link for the curious on how Pyspark works.
-
-## Others
-
-### How do I reduce spark console output?
-
-By default Spark will output a lot of information about its internal working
-when you run a local job.
-
-If you don't want to see this during development on your local machine you 
-can change the logging level by using the process below:
-
-From your home directory run the following command: 
-
-`$ cp spark/conf/log4j.properties.template spark/conf/log4j.properties`
-
-This will create a new logging config file. You then need to edit this file
-using whatever console based text editor you are happy with, `nano` or `vim` are
-pre-installed on your VMs. 
-
-`$ nano spark/conf/log4j.properties` 
-
-You the need to change the following line from this:
-
-`log4j.rootCategory=INFO, console`
-
-To this:
-
-`log4j.rootCategory=ERROR, console`
-
-Once you save this file, the next time you run spark you will only see errors
-and any print or rdd.pprint command outputs.
