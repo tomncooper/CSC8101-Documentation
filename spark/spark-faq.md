@@ -172,6 +172,18 @@ if you like... :)
 
 **Disclaimer**: relax, the creators of pyspark are pretty smart. Its actually C or Java a lot of the time under the hood and the overhead is [likely very small](http://stackoverflow.com/questions/30477982/python-vs-scala-for-spark-jobs). [Here](https://cwiki.apache.org/confluence/display/SPARK/PySpark+Internals) is a link for the curious on how Pyspark works.
 
+### I don't understand Task 4
+
+Task 4 involved evaluating the model you have trained in Task 2. Some people have expressed confusion over how task 4
+should be executed. We have devised a diagram to help clarify the process:
+
+![task-4](images/Spark-task4-pattern.png)
+
+Please also note that the spark documentation is [very](http://spark.apache.org/docs/latest/mllib-collaborative-filtering.html) [helpful](http://spark.apache.org/docs/latest/mllib-evaluation-metrics.html) here ...
+
+For instance - it explains the spark built in way of calculating the RMSE metric. You will not be marked down if you have
+calculated this manually, but why do more work than necessary?
+
 ## Others
 
 ### How do I reduce spark console output?
