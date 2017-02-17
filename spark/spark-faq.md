@@ -14,10 +14,9 @@ Also make sure you have read the instructions in the
 
 # FAQ content
 
-* [Neo4j](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#neo4j)
-* [Spark in iPython notebooks](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#spark-in-ipython-notebooks)
-* [Spark in a command line](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#spark-in-a-command-line)
-* [Others](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/spark-faq.md#others)
+* [Neo4j](#neo4j)
+* [Running Spark](#running-spark)
+* [Spark in general](#spark-in-general)
 
 ## Neo4j
 
@@ -37,7 +36,7 @@ Your neo4j database is most likely down. Login to your VM and run:
 
 Try to load the webpage again.
 
-## Spark in iPython notebooks
+## Running Spark
 
 ### How many Spark worker threads are running on my iPython notebook?
 
@@ -54,8 +53,6 @@ By default SparkContext will run with as many worker threads as logical cores on
 When starting your iPython notebook from the shell command line on your student VM, you can specify specific resource allocation (e.g. number of executors, driver RAM memory, executor RAM memory, etc):
 
 `$ pyspark --num-executors 5 --driver-memory 2g --executor-memory 2g`
-
-## Spark in a command line
 
 ### Do I have to use Jupyter Notebooks to write my python code?
 
@@ -87,6 +84,35 @@ without rebooting use the command below:
 
 This will change the configs back to their defaults and launch the notebook 
 server.
+
+### How do I reduce spark console output?
+
+By default Spark will output a lot of information about its internal working
+when you run a local job.
+
+If you don't want to see this during development on your local machine you 
+can change the logging level by using the process below:
+
+From your home directory run the following command: 
+
+`$ cp spark/spark-2.1.0-bin-hadoop2.7/conf/log4j.properties.template spark/spark-2.1.0-bin-hadoop2.7/conf/log4j.properties`
+
+This will create a new logging config file. You then need to edit this file
+using whatever console based text editor you are happy with, `nano` or `vim` are
+pre-installed on your VMs. 
+
+`$ nano spark/spark-2.1.0-bin-hadoop2.7/conf/log4j.properties` 
+
+You the need to change the following line from this:
+
+`log4j.rootCategory=INFO, console`
+
+To this:
+
+`log4j.rootCategory=ERROR, console`
+
+Once you save this file, the next time you run spark you will only see errors
+and any print or rdd.pprint command outputs.
 
 ## Spark in general
 
@@ -144,7 +170,6 @@ ALS algorithm (delivered by Hugo Firth) you were told what the parameters
 the effect of changing them. Be aware that reducing the rank of latent factor
 matrices and the number of iterations performed will reduce the predictive
 accuracy of your model. 3 would be an absolute minimum for both.
-
 
 --------------------------
 

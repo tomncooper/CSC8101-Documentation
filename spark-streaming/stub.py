@@ -68,7 +68,7 @@ sp_conf.set("spark.cassandra.connection.host", "localhost")
 # Create the spark context object.
 # For local development it is very important to use "local[2]" as Spark
 # Streaming needs 2 cores minimum to function properly
-SC = SparkContext(master="local[2]", appName="Event Processing" conf=sp_conf)
+SC = SparkContext(master="local[2]", appName="Event Processing", conf=sp_conf)
 
 #Set the batch interval in seconds
 BATCH_INTERVAL = 10
@@ -85,8 +85,11 @@ SSC = StreamingContext(SC, BATCH_INTERVAL)
 # Also edit the topic_name you would like to pull messages from and the number
 # of partitions to consume on that topic. For development 1 is fine, for 
 # consuming from the production stream a higher number is recommended.
+topic_name = "dev-stream"
+client_id_for_broker = "Your Student ID"
+num_of_partition_to_consume_from = 1
 RAW_MESSAGES = KafkaUtils.createStream(SSC,
-                                       "BrokerIP:2181",
+                                       "<instert-broker-ip-here>:2181",
                                        client_id_for_broker,
                                        {topic_name: num_of_partitions_to_consume_from})
 
