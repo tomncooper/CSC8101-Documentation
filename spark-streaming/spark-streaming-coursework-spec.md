@@ -148,7 +148,7 @@ to do this is use the `dstream.pprint(n)` method. At each processing interval
 it will print out the first `n` lines of the RDD for that interval (it is the 
 DStream equivalent of running `print(rdd.take(n))` on a Spark Batch rdd). 
 * Spark produces a lot of console output by default. Please refer to the 
-[FAQ](spark-faq.md) for details of how to reduce or disable this output.
+[FAQ](spark-streaming-faq.md) for details of how to reduce or disable this output.
 
 Tasks
 -----
