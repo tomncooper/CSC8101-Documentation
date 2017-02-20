@@ -48,7 +48,7 @@ have approached it. You can still gain marks for a detailed explanation, though
 obviously less than if you had completed the task successfully.
 
 The vivas will be spread across several days. This 
-[Doodle Poll](TBC) (available from 20/02/2017) will allow you to select a 
+[Doodle Poll](http://doodle.com/poll/e78vgfigt48z642b) will allow you to select a 
 timeslot for the viva. Please enter your Student Number and Name against your 
 desired slot. If you are unable to attend any of the viva slots please contact 
 Dr Missier via email.
