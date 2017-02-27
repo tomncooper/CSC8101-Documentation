@@ -25,7 +25,7 @@ added to the relevant courseworks's FAQ.
 Your final Spark program source files and your command line program for Task 3 
 of the Cassandra Coursework should be submitted to NESS by:
 
-16:00 03/03/2017      
+16:00 02/03/2017
 
 All student VM’s will be stopped at this time. They will only be started again 
 for your viva. Therefore make sure that you have all the code, that you intend 
