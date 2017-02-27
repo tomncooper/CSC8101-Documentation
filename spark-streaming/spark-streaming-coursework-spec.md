@@ -145,6 +145,9 @@ match the public IP address of your VM:
 
 `sp_conf.set("spark.cassandra.connection.host", "localhost")` 
 
+Additional details on cluster deployment can be found in the spark batch 
+[documentation](../spark/python-stub/python-deployment.md).
+
 ### Hints
 
 * If you are developing using standard `py` files and `spark-submit` you will 
