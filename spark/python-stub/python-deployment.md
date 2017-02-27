@@ -54,7 +54,7 @@ Few things to note:
 * Running a large cluster continuosly is an expensive endeavour, therefore a lot of effort (thanks Saleh!) was put into building an autoscaling Spark environment. The cluster will be available on request at first.
 * Before contacting us, check if the cluster is running, by visiting [Spark master](http://52.213.206.26:8080) page. You should see a list of worker IDs under 'Workers' in ALIVE state.
 
-![Spark Master - Workers](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/python-stub/images/SparkMaster_workers.png)
+![Spark Master - Workers](images/SparkMaster_workers.png)
 
 * You need to make your Neo4j accessible via bolt interface from outside of your VM. Follow [these instructions](https://github.com/tomncooper/CSC8101-Documentation/blob/master/spark/python-stub/Neo4j-open-bolt-interface.md) to do so.
 
