@@ -263,14 +263,17 @@ quite involved, and varies depending on your chosen language.
 #### Submitting your application into the Spark cluster
 
 Run the following command from your machine (student VM) to submit an application into the auto-scaling cluster:
+
 `
 $SPARK_HOME/bin/spark-submit --master spark://ip-172-31-25-107.eu-west-1.compute.internal:7077 --deploy-mode client <path.to.your-application> <application-arguments> 
 `
  
 If your application is written Java or Scala, you will need to specify the entry point of your application (The class that contains the main method):
+
 `
  $SPARK_HOME/bin/spark-submit --master spark://ip-172-31-25-107.eu-west-1.compute.internal:7077 --class <package.mainClass> --deploy-mode client <path.to.your-application> <application-arguments> 
 `
+
 If the deployment is successful, you can view your application running at "http://your.vm.public.ip:4040".
 
 **Hint**: Despite running your spark job on a cluster, you will still need to write to the Neo4j instance on your VM. The 
