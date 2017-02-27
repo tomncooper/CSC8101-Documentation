@@ -136,9 +136,14 @@ on your VM to execute your program:
 ### Running streaming jobs on the cluster
 
 To run your job on the spark cluster, change the master argument supplied to
-the SparkContext object from `master="Local[2]"` to `master="CLUSTER_IP"`. You 
-will also need set the Cassandra address key in the SparkConf object to point 
-at your VM's IP address.
+the SparkContext object from `master="Local[2]"` to `master="52.213.206.26"`. 
+
+You will also need set the Cassandra address key in the SparkConf object to 
+point at your VM's IP address. If you are using the Python [stub file](stub.py)
+as the basis of your program then change `localhost` in the following line to
+match the public IP address of your VM:
+
+`sp_conf.set("spark.cassandra.connection.host", "localhost")` 
 
 ### Hints
 
