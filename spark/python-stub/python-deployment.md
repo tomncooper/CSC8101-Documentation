@@ -51,7 +51,7 @@ Let's make sure that you can run this program from your student VM.
 
 Few things to note:
 
-* Running a large cluster continuosly is an expensive endeavour, therefore a lot of effort (thanks Saleh!) was put into building an autoscaling Spark environment. The cluster will be available on request at first.
+* Running a large cluster continuosly is an expensive endeavour, therefore a lot of effort (thanks Saleh!) was put into building an autoscaling Spark environment. ~~The cluster will be available on request at first.~~ The cluster is up and running [here](http://52.213.206.26:8080/).
 * Before contacting us, check if the cluster is running, by visiting [Spark master](http://52.213.206.26:8080) page. You should see a list of worker IDs under 'Workers' in ALIVE state.
 
 ![Spark Master - Workers](images/SparkMaster_workers.png)
